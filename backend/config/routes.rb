@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/health", to: "health#index"
 
+  resources :repositories, only: [:index]
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
