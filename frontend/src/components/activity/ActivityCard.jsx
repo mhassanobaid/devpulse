@@ -1,4 +1,5 @@
 import activityConfig from "./activityConfig";
+import { formatRelativeTime } from "../../utils/formatRelativeTime";
 
 function ActivityCard({ activity }) {
 
@@ -22,7 +23,7 @@ function ActivityCard({ activity }) {
           rounded-full
           border-4
           border-white
-          bg-slate-400
+          ${config.markerColor}
         "
       />
 
@@ -61,7 +62,7 @@ function ActivityCard({ activity }) {
 
               rounded-xl
 
-              bg-slate-100
+              ${config.iconBackground}
             "
           >
 
@@ -69,7 +70,7 @@ function ActivityCard({ activity }) {
 
               <Icon
                 size={22}
-                className="text-slate-700"
+                className={config.iconColor}
               />
 
             )}
@@ -146,7 +147,7 @@ function ActivityCard({ activity }) {
               text-slate-400
             "
           >
-            {activity.timestamp}
+            {formatRelativeTime(activity.timestamp)}
           </p>
 
         </div>
