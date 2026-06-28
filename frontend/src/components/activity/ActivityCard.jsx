@@ -8,31 +8,88 @@ function ActivityCard({ activity }) {
 
   return (
 
-    <article>
+    <article className="relative pl-14">
 
-      <div>
+      {/* Timeline Circle */}
 
-        {Icon && <Icon size={18} />}
+      <div
+        className="
+          absolute
+          left-3
+          top-2
+          h-4
+          w-4
+          rounded-full
+          border-4
+          border-white
+          bg-slate-400
+        "
+      />
 
-      </div>
+      {/* Card */}
 
-      <div>
+      <div
+        className="
+          rounded-2xl
+          border
+          border-slate-200
+          bg-white
+          p-5
+          shadow-sm
+        "
+      >
 
-        <h3>
+        <div className="flex items-center gap-3">
 
-          {activity.description}
+          {Icon && (
+            <Icon
+              size={20}
+              className="text-slate-700"
+            />
+          )}
 
-        </h3>
+          <h3
+            className="
+              font-semibold
+              text-slate-900
+            "
+          >
+            {activity.description}
+          </h3>
 
-        <p>
+        </div>
 
-          {activity.repository}
+        <div className="mt-4 space-y-1">
 
-        </p>
+          <p
+            className="
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            {activity.developer}
+          </p>
 
-        <small>
-          {activity.developer}
-        </small>
+          <p
+            className="
+              text-sm
+              text-slate-500
+            "
+          >
+            {activity.repository}
+          </p>
+
+          <p
+            className="
+              text-xs
+              text-slate-400
+            "
+          >
+            {activity.timestamp}
+          </p>
+
+        </div>
 
       </div>
 
