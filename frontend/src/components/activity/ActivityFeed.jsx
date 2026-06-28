@@ -1,6 +1,35 @@
 import ActivityCard from "./ActivityCard";
+import ActivitySkeleton from "./ActivitySkeleton";
+import EmptyActivityState from "./EmptyActivityState";
 
-function ActivityFeed({ activities }) {
+function ActivityFeed({ activities, loading }) {
+
+  if (loading) {
+
+    return (
+
+        <div className="space-y-6">
+
+            {[...Array(4)].map((_, index) => (
+
+                <ActivitySkeleton
+                    key={index}
+                />
+
+            ))}
+
+        </div>
+
+    );
+
+  }
+
+  if (activities.length === 0) {
+
+      return <EmptyActivityState />;
+
+  }
+
   return (
     <section>
 

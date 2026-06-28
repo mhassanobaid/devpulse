@@ -118,6 +118,7 @@ function Dashboard() {
 
             <ActivityFeed
               activities={activities}
+              loading={loading}
             />
 
           </div>
