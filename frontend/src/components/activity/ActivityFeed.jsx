@@ -1,6 +1,10 @@
 import ActivityCard from "./ActivityCard";
 import ActivitySkeleton from "./ActivitySkeleton";
 import EmptyActivityState from "./EmptyActivityState";
+import { motion } from "framer-motion";
+import {
+  listVariants,
+} from "./animations";
 
 function ActivityFeed({ activities, loading }) {
 
@@ -64,7 +68,12 @@ function ActivityFeed({ activities, loading }) {
           "
         />
 
-        <div className="space-y-8">
+        <motion.div
+          className="space-y-8"
+          variants={listVariants}
+          initial="hidden"
+          animate="visible"
+        >
 
           {activities.map((activity) => (
 
@@ -75,7 +84,7 @@ function ActivityFeed({ activities, loading }) {
 
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
 

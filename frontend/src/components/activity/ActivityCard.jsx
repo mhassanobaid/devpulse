@@ -1,5 +1,9 @@
 import activityConfig from "./activityConfig";
+import { motion } from "framer-motion";
 import { formatRelativeTime } from "../../utils/formatRelativeTime";
+import {
+    cardVariants,
+} from "./animations";
 
 function ActivityCard({ activity }) {
 
@@ -9,11 +13,26 @@ function ActivityCard({ activity }) {
 
   return (
 
-    <article className="relative pl-14">
+    <motion.article
+      variants={cardVariants}
+      className="relative pl-14"
+    >
 
       {/* Timeline Node */}
 
-      <div
+      <motion.div
+        initial={{
+            scale: 0,
+        }}
+
+        animate={{
+            scale: 1,
+        }}
+
+        transition={{
+            delay: 0.25,
+        }}
+
         className="
           absolute
           left-3
@@ -29,20 +48,24 @@ function ActivityCard({ activity }) {
 
       {/* Card */}
 
-      <div
+      <motion.div
+
+        whileHover={{
+            y: -4,
+            scale: 1.01,
+        }}
+
+        transition={{
+            duration: 0.2,
+        }}
+
         className="
-          rounded-2xl
-          border
-          border-slate-200
-          bg-white
-          p-6
-          shadow-sm
-
-          transition-all
-          duration-300
-
-          hover:-translate-y-1
-          hover:shadow-lg
+        rounded-2xl
+        border
+        border-slate-200
+        bg-white
+        p-6
+        shadow-sm
         "
       >
 
@@ -66,14 +89,24 @@ function ActivityCard({ activity }) {
             "
           >
 
-            {Icon && (
+          <motion.div
 
-              <Icon
-                size={22}
-                className={config.iconColor}
-              />
+            whileHover={{
+              rotate: 8,
+            }}
 
-            )}
+              transition={{
+                  duration: 0.2,
+              }}
+
+              >
+
+                  <Icon
+                      size={22}
+                      className={config.iconColor}
+                  />
+
+            </motion.div>
 
           </div>
 
@@ -152,9 +185,9 @@ function ActivityCard({ activity }) {
 
         </div>
 
-      </div>
+      </motion.div>
 
-    </article>
+    </motion.article>
 
   );
 

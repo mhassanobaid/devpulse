@@ -1,10 +1,11 @@
 import { Inbox } from "lucide-react";
+import { motion } from "framer-motion";
 
 function EmptyActivityState() {
 
     return (
 
-        <div
+        <motion.div
             className="
                 flex
 
@@ -63,7 +64,7 @@ function EmptyActivityState() {
                 Engineering events will appear here once activity is available.
             </p>
 
-        </div>
+        </motion.div>
 
     );
 
