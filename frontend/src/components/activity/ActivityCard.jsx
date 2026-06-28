@@ -10,13 +10,13 @@ function ActivityCard({ activity }) {
 
     <article className="relative pl-14">
 
-      {/* Timeline Circle */}
+      {/* Timeline Node */}
 
       <div
         className="
           absolute
           left-3
-          top-2
+          top-7
           h-4
           w-4
           rounded-full
@@ -34,51 +34,111 @@ function ActivityCard({ activity }) {
           border
           border-slate-200
           bg-white
-          p-5
+          p-6
           shadow-sm
+
+          transition-all
+          duration-300
+
+          hover:-translate-y-1
+          hover:shadow-lg
         "
       >
 
-        <div className="flex items-center gap-3">
+        {/* Header */}
 
-          {Icon && (
-            <Icon
-              size={20}
-              className="text-slate-700"
-            />
-          )}
+        <div className="flex items-start gap-4">
 
-          <h3
+          {/* Icon */}
+
+          <div
             className="
-              font-semibold
-              text-slate-900
+              flex
+              h-12
+              w-12
+              items-center
+              justify-center
+
+              rounded-xl
+
+              bg-slate-100
             "
           >
-            {activity.description}
-          </h3>
+
+            {Icon && (
+
+              <Icon
+                size={22}
+                className="text-slate-700"
+              />
+
+            )}
+
+          </div>
+
+          {/* Title */}
+
+          <div>
+
+            <p
+              className="
+                text-xs
+                font-medium
+                uppercase
+                tracking-widest
+                text-slate-400
+              "
+            >
+              {config.title}
+            </p>
+
+            <h3
+              className="
+                mt-1
+                text-base
+                font-semibold
+                text-slate-900
+              "
+            >
+              {activity.description}
+            </h3>
+
+          </div>
 
         </div>
 
-        <div className="mt-4 space-y-1">
+        {/* Body */}
 
-          <p
-            className="
-              text-sm
-              font-medium
-              text-slate-700
-            "
-          >
-            {activity.developer}
-          </p>
+        <div
+          className="
+            mt-6
+            flex
+            items-center
+            justify-between
+          "
+        >
 
-          <p
-            className="
-              text-sm
-              text-slate-500
-            "
-          >
-            {activity.repository}
-          </p>
+          <div>
+
+            <p
+              className="
+                font-medium
+                text-slate-800
+              "
+            >
+              {activity.developer}
+            </p>
+
+            <p
+              className="
+                text-sm
+                text-slate-500
+              "
+            >
+              {activity.repository}
+            </p>
+
+          </div>
 
           <p
             className="

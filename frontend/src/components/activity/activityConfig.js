@@ -9,7 +9,7 @@ import {
 const activityConfig = {
   push: {
     icon: GitCommit,
-    title: "Push",
+    title: "Commit Push",
   },
 
   pull_request: {
