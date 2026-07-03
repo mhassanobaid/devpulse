@@ -6,6 +6,7 @@ import { checkHealth } from "../api/health"
 import { getRepositories } from "../api/repositories"
 import { getStats } from "../api/stats";
 import { getActivities } from "../api/activities";
+import ActivityFeed from "../components/activity/ActivityFeed";
 
 import DashboardLayout from
 "../components/layout/DashboardLayout";
@@ -115,20 +116,10 @@ function Dashboard() {
               Activities
             </h2>
 
-            {activities.map(activity => (
-
-              <div
-                key={activity.id}
-                className="mb-4 border-b pb-2"
-              >
-
-                <div>{activity.repository}</div>
-
-                <div>{activity.description}</div>
-
-              </div>
-
-            ))}
+            <ActivityFeed
+              activities={activities}
+              loading={loading}
+            />
 
           </div>
         </section>

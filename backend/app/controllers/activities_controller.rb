@@ -16,6 +16,22 @@ class ActivitiesController < ApplicationController
         developer: "Sara",
         description: "Opened PR #18",
         timestamp: "2026-06-27T11:45:00Z"
+      },
+      {
+        id: 3,
+        type: "release",
+        repository: "quote-editor",
+        developer: "Pakeeza",
+        description: "Opened PR #18",
+        timestamp: "2026-06-27T11:45:00Z"
+      },
+      {
+        id: 4,
+        type: "issue",
+        repository: "quote-editor",
+        developer: "Hmad",
+        description: "Opened PR #18",
+        timestamp: "2026-06-27T11:45:00Z"
       }
     ]
   end
